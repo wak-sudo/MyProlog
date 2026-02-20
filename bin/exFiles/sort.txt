@@ -1,0 +1,37 @@
+% Liczba mniejsza od innych
+lte(0, 0). lte(0, 1). lte(0, 2). lte(0, 3). lte(0, 4).
+lte(1, 1). lte(1, 2). lte(1, 3). lte(1, 4).
+lte(2, 2). lte(2, 3). lte(2, 4).
+lte(3, 3). lte(3, 4).
+lte(4, 4).
+
+% Liczba większa od innych
+gt(1, 0).
+gt(2, 0). gt(2, 1).
+gt(3, 0). gt(3, 1). gt(3, 2).
+gt(4, 0). gt(4, 1). gt(4, 2). gt(4, 3).
+
+% bubble_sort(Lista, Posortowana)
+bubble_sort(List, Sorted) :- 
+    b_sort(List, nil, Sorted).
+
+% b_sort(DoPrzetworzenia, Akumulator, Wynik)
+b_sort(nil, Acc, Acc).
+b_sort(cons(H, T), Acc, Sorted) :- 
+    bubble(H, T, NT, Max), 
+    b_sort(NT, cons(Max, Acc), Sorted).
+
+% bubble(Element, ListaWe, ListaWy, Najwiekszy)
+bubble(X, nil, nil, X).
+
+% Przypadek 1: X jest większe od Y (X > Y)
+bubble(X, cons(Y, T), cons(Y, NT), Max) :- 
+    gt(X, Y), 
+    bubble(X, T, NT, Max).
+
+% Przypadek 2: X jest mniejsze lub równe Y (X =< Y)
+bubble(X, cons(Y, T), cons(X, NT), Max) :- 
+    lte(X, Y), 
+    bubble(Y, T, NT, Max).
+
+% bubble_sort(cons(4, cons(2, cons(1, cons(3, nil)))), X)

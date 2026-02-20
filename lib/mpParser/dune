@@ -1,0 +1,5 @@
+(include_subdirs unqualified)
+
+(library
+ (name mpParser)
+ (modules Ast Errors Lexer YaccParser Parser))

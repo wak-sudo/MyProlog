@@ -1,0 +1,12 @@
+(include_subdirs unqualified)
+
+(test
+ (name RunTests)
+ (libraries mpInterpreter mpParser ounit2)
+ (deps
+  (file %{project_root}/test/mpInterpreter/testFiles/SolverTests/basic1.txt)
+  (file %{project_root}/test/mpInterpreter/testFiles/SolverTests/basic2.txt)
+  (file %{project_root}/test/mpInterpreter/testFiles/SolverTests/basic3.txt)
+  (file %{project_root}/test/mpInterpreter/testFiles/SolverTests/rule1.txt)
+  (file %{project_root}/test/mpInterpreter/testFiles/SolverTests/perm.txt)
+  ))

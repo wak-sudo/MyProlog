@@ -1,0 +1,11 @@
+% Fakty: rodzic(Rodzic, Dziecko)
+rodzic(jan, anna).
+rodzic(jan, piotr).
+rodzic(maria, anna).
+rodzic(maria, piotr).
+rodzic(piotr, kasia).
+
+% Reguła: dziadek(Dziadek, Wnuk)
+dziadek(X, Z) :- 
+    rodzic(X, Y), 
+    rodzic(Y, Z).

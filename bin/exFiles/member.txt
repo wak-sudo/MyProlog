@@ -1,0 +1,4 @@
+member(X, cons(X, T)).
+member(X, cons(H,T)) :- member(X, T).
+
+% member(c, cons(a, cons(b, cons(c, nil)))).

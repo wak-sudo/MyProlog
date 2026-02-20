@@ -1,0 +1,5 @@
+% append(Lista1, Lista2, Wynik)
+append(nil, L, L).
+append(cons(H,T), L, cons(H,R)) :- append(T, L, R).
+
+% append(X, Y, cons(a, cons(b, cons(c, nil)))).

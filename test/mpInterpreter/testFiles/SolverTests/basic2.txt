@@ -1,0 +1,5 @@
+lubi(piotr, banan).
+lubi(ania, banan).
+lubi(piotr, gruszka).
+lubi(ania, jablko).
+lubi(ola, jablko).

@@ -1,0 +1,7 @@
+rodzic(anna, jan).
+rodzic(jan, piotr).
+rodzic(jan, kasia).
+
+dziadek(X, Y) :-
+    rodzic(X, Z),
+    rodzic(Z, Y).
